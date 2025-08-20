@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    
+    <!-- <link rel="stylesheet" href="CSS/e.css"> -->
+     <link rel="stylesheet" href="CSS/main.css">
+     
+
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <a class="navbar-brand" href="#"><img src="Images/logo/navlogo.jpg" alt="Logo" class="logo"></a>
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="products.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Products
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="iphone.html">Iphone</a></li>
+            <li><a class="dropdown-item" href="macbook.html">Macbook</a></li>
+            <li><a class="dropdown-item" href="airpods.html">Airpods</a></li>
+            <li><a class="dropdown-item" href="ipad.html">Ipad</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#footer">About Us</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Cart</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="#footer">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#blog">Blog</a>
+        </li>
+        
+      </ul>
+      <div class="d-flex">
+        <form class="d-flex" role="search">
+        <input class="form-control me-2 border-dark" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn bg-white border-dark text-dark" type="submit">Search</button>
+      </form>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><img src="Images/icons/user.svg" alt="User Icon" class="user-icon"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link position-relative p-2" href="cart.html" aria-label="Cart">
+          <img src="Images/icons/cart.svg" alt="Cart Icon" class="cart-icon" style="width:24px;height:24px;">
+          <span id="cartCount" class="cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- banner section -->
+ <section class="hero">
+    <div class="hero-wrapper">
+      <img src="Images/banner/apple-store-washington.jpg" alt="Hero Banner" class="hero-image" />
+      <div class="hero-text-overlay">
+        <h1>WELCOME TO APPLE SHOP </h1>
+        <p>Discover the latest in mobile technology and accessories.</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn-black">Start Shopping</a>
+          <a href="#" class="btn-outline">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+ <section class="py-4">
+  <h2 class="text-center my-4 coming-soon-heading">
+    BEST SELLERS
+  </h2>
+    <div class="container">
+      <!-- 4 per row on large, 2 per row on md, 1 per row on xs -->
+      <div id="productGrid" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4"></div>
+    </div>
+  </section>
+
+
+<!-- Coming soon section -->
+<div id="carouselExampleCaptions"
+     class="carousel slide"
+     data-bs-ride="carousel"
+     data-bs-interval="2000"
+     data-bs-pause="false">
+  <h2 class="text-center my-4 coming-soon-heading">
+    COMING SOON
+  </h2>
+
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+            class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+  </div>
+
+  <div class="carousel-inner">
+    <!-- Slide 1 -->
+    <div class="carousel-item active position-relative">
+      <img src="Images/coming-soon/iPhone-16-all-models-smk-mojo-222-Sadaan-mercantile.webp"
+           class="d-block w-100 object-fit-cover" style="height:64vh;" alt="...">
+      <!-- gradient overlay -->
+      <div class="position-absolute top-0 start-0 w-100 h-100"
+           style="background:linear-gradient(to bottom, rgba(0,0,0,.10) 0%, rgba(0,0,0,.25) 35%, rgba(0,0,0,.55) 80%, rgba(0,0,0,.65) 100%);"></div>
+      <!-- caption (no box) -->
+      <div class="carousel-caption d-md-block">
+        <h5 class="text-white fw-bold mb-1"
+            style="font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">
+          First slide label
+        </h5>
+        <p class="text-white mb-0">Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item position-relative">
+      <img src="Images/coming-soon/iphone-17-air-191432507-16x9-1-20250319085518.webp"
+           class="d-block w-100 object-fit-cover" style="height:64vh;" alt="...">
+      <div class="position-absolute top-0 start-0 w-100 h-100"
+           style="background:linear-gradient(to bottom, rgba(0,0,0,.10) 0%, rgba(0,0,0,.25) 35%, rgba(0,0,0,.55) 80%, rgba(0,0,0,.65) 100%);"></div>
+      <div class="carousel-caption d-md-block">
+        <h5 class="text-white fw-bold mb-1"
+            style="font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">
+          Second slide label
+        </h5>
+        <p class="text-white mb-0">Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item position-relative">
+      <img src="Images/coming-soon/iphone-17-pro-leaked-image3.webp"
+           class="d-block w-100 object-fit-cover" style="height:64vh;" alt="...">
+      <div class="position-absolute top-0 start-0 w-100 h-100"
+           style="background:linear-gradient(to bottom, rgba(0,0,0,.10) 0%, rgba(0,0,0,.25) 35%, rgba(0,0,0,.55) 80%, rgba(0,0,0,.65) 100%);"></div>
+      <div class="carousel-caption d-md-block">
+        <h5 class="text-white fw-bold mb-1"
+            style="font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">
+          Third slide label
+        </h5>
+        <p class="text-white mb-0">Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button"
+          data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button"
+          data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- iPhone 17 Updates -->
+<section id="iphone17-updates" class="py-5">
+  <div class="container-lg"><!-- smaller than .container on large screens -->
+
+    <!-- Title -->
+    <div class="row mb-3">
+      <div class="col-12 text-center">
+        <h2 class="text-center my-4 coming-soon-heading">
+          NEW UPDATES 
+        </h2>
+      </div>
+    </div>
+
+    <!-- Row A: 7/5 (Overview + Quick Specs) -->
+    <div class="row g-3 align-items-stretch">
+      <div class="col-md-7">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="ratio ratio-16x9 hover-card rounded-top">
+            <img src="Images/coming-soon/iPhone-17-Roundup-Feature-1.jpg" alt="iPhone 17 overview" class="w-100 h-100 object-fit-cover">
+            <!-- Hover overlay -->
+            <div class="hover">
+            </div>
+          </div>
+          <div class="card-body py-3">
+            <h3 class="h5  mb-2" style="font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">Overview</h3>
+            <ul class="list-unstyled mb-0 small">
+              <li class="mb-2"><span class="badge rounded-pill text-bg-dark me-2">Camera</span> Advanced multi-camera system with improved low-light.</li>
+              <li class="mb-2"><span class="badge rounded-pill text-bg-dark me-2">Battery</span> All-day battery; faster, smarter power management.</li>
+              <li class="mb-2"><span class="badge rounded-pill text-bg-dark me-2">Display</span> Bright, smooth display with ultra-thin bezels.</li>
+              <li class="mb-2"><span class="badge rounded-pill text-bg-dark me-2">iOS</span> Latest iOS with new intelligence features.</li>
+              <li><span class="badge rounded-pill text-bg-dark me-2">Design</span> Refined materials and fresh color finishes.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-5">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body d-flex flex-column py-3">
+            <h3 class="h6 fw-bold mb-3" style="font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">Quick Specs</h3>
+            <ul class="list-unstyled small mb-3">
+              <li class="mb-2"><strong>Display:</strong> 6.1″ / 6.7″ (example)</li>
+              <li class="mb-2"><strong>Chip:</strong> Next-gen Apple silicon</li>
+              <li class="mb-2"><strong>Battery:</strong> All-day (estimate)</li>
+              <li class="mb-2"><strong>Storage:</strong> 128GB–2TB</li>
+              <li><strong>OS:</strong> Latest iOS</li>
+            </ul>
+
+            <!-- Colors quick view -->
+            <div class="mt-auto">
+              <div class="fw-semibold small mb-2">Colors</div>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="color-swatch" style="--sw:#1d1f24" title="Midnight"></span>
+                <span class="color-swatch" style="--sw:#f5efe6" title="Starlight"></span>
+                <span class="color-swatch" style="--sw:#a2b7ff" title="Blue"></span>
+                <span class="color-swatch" style="--sw:#e41e2b" title="(PRODUCT)RED"></span>
+                <span class="color-swatch" style="--sw:#c9b8ff" title="Purple"></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row B: 3 cols (Camera, Display, Battery) -->
+    <div class="row g-3 mt-2">
+      <div class="col-12 col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="ratio ratio-16x9 hover-card rounded-top">
+            <img src="Images/coming-soon/liveblog-camera.webp" alt="iPhone 17 camera sample" class="w-100 h-100 object-fit-cover">
+            <div class="hover-overlay text-white p-2 p-sm-3">
+              <div class="small fw-semibold">Camera: Better low-light & stabilization</div>
+            </div>
+          </div>
+          <div class="card-body py-3">
+            <h3 class="h6 fw-bold mb-2" style="font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">Camera</h3>
+            <p class="small text-muted mb-0">Sharper details and low-light performance; enhanced portrait controls.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+  <div class="card h-100 shadow-sm border-0 position-relative overflow-hidden"
+       onmouseenter="this.querySelector('.readov').classList.remove('opacity-0')"
+       onmouseleave="this.querySelector('.readov').classList.add('opacity-0')">
+
+    <!-- (optional) image area; remove if you don't want an image -->
+    <div class="ratio ratio-16x9">
+      <img src="Images/coming-soon/ios-icon-logo-software-phone-apple-symbol-with-name-black-design-mobile-illustration-free-vector.jpg" alt="Latest iOS features"
+           class="w-100 h-100 object-fit-cover">
+    </div>
+
+    <div class="card-body py-3">
+      <h3 class="h6 mb-2" style="font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">iOS</h3>
+      <p class="small text-muted mb-0">iOS 17 introduces new features and enhancements.</p>
+    </div>
+
+    <!-- hover overlay + bottom-center button -->
+    <div class="readov position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center pb-3 opacity-0"
+         style="background:linear-gradient(to top, rgba(0,0,0,.65) 0%, rgba(0,0,0,.25) 60%, rgba(0,0,0,0) 100%); transition:opacity .2s;">
+      <a href="#" class="btn btn-outline-light rounded-pill fw-bold px-4">Read more</a>
+    </div>
+
+  </div>
+</div>
+
+     
+
+      <div class="col-12 col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="ratio ratio-16x9 hover-card rounded-top">
+            <img src="Images/coming-soon/ios-battery-performance-social-card.jpg" alt="iPhone 17 battery" class="w-100 h-100 object-fit-cover">
+            <div class="hover-overlay text-white p-2 p-sm-3">
+              <div class="small fw-semibold">Battery: All-day with faster charging</div>
+            </div>
+          </div>
+          <div class="card-body py-3">
+            <h3 class="h6 fw-bold mb-2" style="font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;">Battery & Charging</h3>
+            <p class="small text-muted mb-0">Optimized power use and fast charging support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+
+  </div><!-- /container-lg -->
+</section>
+
+
+
+<!-- Customer Reviews Carousel -->
+<section class="py-5 bg-light">
+  <div class="container">
+
+    <div class="text-center mb-4">
+      <h2 class=" mb-1">WHAT APPLE CUSTOMERS SAY</h2>
+      <p class="text-muted mb-0">Real reviews from recent Apple purchases.</p>
+    </div>
+
+    <div id="reviewsCarousel" class="carousel slide" data-bs-interval="false">
+
+      <!-- Slides -->
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row g-4">
+            <!-- 1 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm ">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="Images/customers/customer1.jpg" alt="Mask" class="rounded-circle me-3" width="56" height="56">
+                    <div>
+                      <h6 class="mb-0 fw-semibold">Mask</h6>
+                      <small class="text-muted">Bought: iPhone 15 Pro</small>
+                    </div>
+                  </div>
+                  <div class="mb-2"><span class="text-warning">★ ★ ★ ★ ★</span></div>
+                  <p class="mb-0 text-secondary">Cameras are insane and battery lasts all day. Worth it.</p>
+                </div>
+              </div>
+            </div>
+            <!-- 2 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm ">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="Images/customers/customer2.jpg" alt="Noah" class="rounded-circle me-3" width="56" height="56">
+                    <div>
+                      <h6 class="mb-0 fw-semibold">Noah</h6>
+                      <small class="text-muted">Bought: MacBook Air M2</small>
+                    </div>
+                  </div>
+                  <div class="mb-2"><span class="text-warning">★ ★ ★ ★ ☆</span></div>
+                  <p class="mb-0 text-secondary">Super fast and silent. Wish the base storage was bigger.</p>
+                </div>
+              </div>
+            </div>
+            <!-- 3 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm ">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="Images/customers/customer3.jpg" alt="Maya" class="rounded-circle me-3" width="56" height="56">
+                    <div>
+                      <h6 class="mb-0 fw-semibold">Maya</h6>
+                      <small class="text-muted">Bought: AirPods Pro (2nd gen)</small>
+                    </div>
+                  </div>
+                  <div class="mb-2"><span class="text-warning">★ ★ ★ ★ ★</span></div>
+                  <p class="mb-0 text-secondary">Noise cancelation is next level. Great for flights.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row g-4">
+            <!-- 4 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="customer4.jpg" alt="Ethan" class="rounded-circle me-3" width="56" height="56">
+                    <div>
+                      <h6 class="mb-0 fw-semibold">Ethan</h6>
+                      <small class="text-muted">Bought: iPad Air</small>
+                    </div>
+                  </div>
+                  <div class="mb-2"><span class="text-warning">★ ★ ★ ★ ☆</span></div>
+                  <p class="mb-0 text-secondary">Perfect for notes and media. Pencil support is awesome.</p>
+                </div>
+              </div>
+            </div>
+            <!-- 5 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="customer5.jpg" alt="Liam" class="rounded-circle me-3" width="56" height="56">
+                    <div>
+                      <h6 class="mb-0 fw-semibold">Liam</h6>
+                      <small class="text-muted">Bought: Mac mini M2</small>
+                    </div>
+                  </div>
+                  <div class="mb-2"><span class="text-warning">★ ★ ★ ☆ ☆</span></div>
+                  <p class="mb-0 text-secondary">Great performance, but needed to upgrade RAM for my work.</p>
+                </div>
+              </div>
+            </div>
+            <!-- 6 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="customer6.jpg" alt="Zara" class="rounded-circle me-3" width="56" height="56">
+                    <div>
+                      <h6 class="mb-0 fw-semibold">Zara</h6>
+                      <small class="text-muted">Bought: Apple Watch Series 9</small>
+                    </div>
+                  </div>
+                  <div class="mb-2"><span class="text-warning">★ ★ ★ ★ ★</span></div>
+                  <p class="mb-0 text-secondary">Health tracking is super accurate. Love the bands.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="row g-4">
+            <!-- 7 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="customer7.jpg" alt="Sophia" class="rounded-circle me-3" width="56" height="56">
+                    <div>
+                      <h6 class="mb-0 fw-semibold">Sophia</h6>
+                      <small class="text-muted">Bought: HomePod mini</small>
+                    </div>
+                  </div>
+                  <div class="mb-2"><span class="text-warning">★ ★ ★ ★ ☆</span></div>
+                  <p class="mb-0 text-secondary">Compact with rich sound. Siri works great for the home.</p>
+                </div>
+              </div>
+            </div>
+            <!-- 8 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="customer8.jpg" alt="Arjun" class="rounded-circle me-3" width="56" height="56">
+                    <div>
+                      <h6 class="mb-0 fw-semibold">Arjun</h6>
+                      <small class="text-muted">Bought: Apple TV 4K</small>
+                    </div>
+                  </div>
+                  <div class="mb-2"><span class="text-warning">★ ★ ★ ★ ★</span></div>
+                  <p class="mb-0 text-secondary">Interface is smooth and the remote is finally perfect.</p>
+                </div>
+              </div>
+            </div>
+            <!-- 9 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="customer9.jpg" alt="Nora" class="rounded-circle me-3" width="56" height="56">
+                    <div>
+                      <h6 class="mb-0 fw-semibold">Nora</h6>
+                      <small class="text-muted">Bought: MacBook Pro M3</small>
+                    </div>
+                  </div>
+                  <div class="mb-2"><span class="text-warning">★ ★ ★ ★ ☆</span></div>
+                  <p class="mb-0 text-secondary">Performance monster. Battery life is unreal for dev work.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+  
+    <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev" aria-label="Previous">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next" aria-label="Next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+
+    <!-- Radio-style indicators -->
+    <div class="d-flex justify-content-center mt-3">
+      <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" class="carousel-indicator active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="1" class="carousel-indicator" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="2" class="carousel-indicator" aria-label="Slide 3"></button>
+    </div>
+
+
+  </div>
+
+  </div>
+</section>
+
+<!-- blog -->
+<section id="blog" class="media-slider">
+  <div class="track">
+
+    <!-- 1 -->
+    <article class="media-card pos-bottom-left">
+      <img src="Images/blog/apple_music-update_hero_08242021_inline.jpg.slideshow-large_2x.jpg" alt="Seth Rogen & Zane Lowe">
+      <div class="overlay">
+        <div class="kicker"> Music</div>
+        <h3>Seth Rogen &amp; Zane Lowe</h3>
+        <p>The Zane Lowe Interview</p>
+        <a href="#" class="cta">Listen</a>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="media-card pos-center-right">
+      <img src="Images/blog/professional-female-golfer-holding-golf-600nw-2037390800.webp" alt="PGA TOUR Pro Golf">
+      <div class="overlay">
+        <div class="kicker"> Arcade</div>
+        <h3>PGA TOUR Pro Golf</h3>
+        <a href="#" class="cta">Play now</a>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="media-card pos-bottom-right">
+      <img src="Images/blog/apple-fitness-plus__cidrqiun6tle_og.png" alt="Strength with Gregg">
+      <div class="overlay">
+        <div class="kicker">Fitness+</div>
+        <h3>Strength with Gregg</h3>
+        <a href="#" class="cta">Watch now</a>
+      </div>
+    </article>
+
+    <!-- Repeat these same 3 so it loops seamlessly -->
+    <article class="media-card pos-bottom-left" aria-hidden="true">
+      <img src="Images/blog/mobile-game-icon-in-black-and-white-color-gaming-illustration-vector.jpg" alt="">
+      <div class="overlay">
+        <div class="kicker"> Mobile Game</div>
+        <h3>Seth Rogen &amp; Zane Lowe</h3>
+        <p>The Zane Lowe Interview</p>
+        <a href="#" class="cta">Play</a>
+      </div>
+    </article>
+
+    <article class="media-card pos-center-right" aria-hidden="true">
+      <img src="Images/blog/open-book-on-stack-of-vintage-books-photo.jpg" alt="">
+      <div class="overlay">
+        <div class="kicker"> Arcade</div>
+        <h3>PGA TOUR Pro Golf</h3>
+        <a href="#" class="cta">Read Now</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- footer -->
+<footer id="footer" class="site-footer">
+  <!-- Col 1: Newsletter -->
+  <div class="footer-content">
+    <div class="footer-content__newsletter">
+      <div class="site-footer__newsletter-label mb-3 p-3">
+        <h5>Sign up for updates on <br>new arrivals &amp; exclusive offers</h5>
+        <p>Be the first to know about <br>new products and special promotions!</p>
+      </div>
+
+      <div class="site-footer__newsletter-input p-3">
+        <input type="email" placeholder="Your email address">
+        <button type="submit">Subscribe</button>
+      </div>
+
+      <div class="Social p-3">
+        <a href="#"><img src="Images/social_icon/logo.svg" alt="LinkedIn" class="me-3" width="28"></a>
+        <a href="#"><img src="Images/social_icon/instgram.svg" alt="Instagram" class="me-3" width="28"></a>
+        <a href="#"><img src="Images/social_icon/facebook.svg" alt="Facebook" width="28"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Col 2: Menu -->
+  <div class="footer-menu text-lg-left" >
+    <h4>Menu</h4>
+    <ul class="footer-menu__list">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#"></a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Col 3: Our Shop -->
+  <div class="footer-studio">
+    <h4>Our Shop</h4>
+    <ul class="footer-menu__list">
+      <li><a href="#">Shop All</a></li>
+      <li><a href="#">New Arrivals</a></li>
+      <li><a href="#">Best Sellers</a></li>
+      <li><a href="#">Sale</a></li>
+    </ul>
+  </div>
+
+  <!-- Col 4: Contact -->
+  <div class="footer-contact">
+    <h4>Contact Us</h4>
+    <ul class="footer-menu__list">
+      <li><a href="#">Email</a></li>
+      <li><a href="#">Phone</a></li>
+      <li><a href="#">Address</a></li>
+    </ul>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+  <p>&copy; 2025 Apple Store. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Floating contact buttons -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index:1080;">
+  <div class="d-flex flex-column align-items-end gap-2">
+
+    <!-- Email  -->
+    <!-- WhatsApp -->
+    <a
+      href="https://wa.me/8801999575082?text=Hi%20Apple%20Store%2C%20I%20need%20help%20with..."
+      class="btn btn-success rounded-circle shadow d-inline-flex align-items-center justify-content-center"
+      style="width:56px;height:56px;"
+      aria-label="Chat on WhatsApp"
+      target="_blank" rel="noopener">
+      <!-- WhatsApp SVG -->
+      <img src="Images/icons/whatsapp-svgrepo-com.svg" alt="" class="img-fluid">
+    </a>
+
+    <!-- Help (opens offcanvas) -->
+    <button
+      class="btn btn-dark rounded-pill shadow px-3 d-inline-flex align-items-center gap-2"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#helpPanel"
+      aria-controls="helpPanel">
+      <!-- Headset SVG -->
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 1a9 9 0 0 0-9 9v6a3 3 0 0 0 3 3h2v-8H6V10a6 6 0 1 1 12 0v1h-2v8h2a3 3 0 0 0 3-3v-6a9 9 0 0 0-9-9z"/>
+      </svg>
+      Help
+    </button>
+  </div>
+</div>
+
+<!-- Offcanvas: Customer Help -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="helpPanel" aria-labelledby="helpPanelLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="helpPanelLabel">Customer Help</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p class="text-muted">How can we assist you today?</p>
+    <div class="list-group">
+      <a class="list-group-item list-group-item-action" href="mailto:support@example.com">Email Support</a>
+      <a class="list-group-item list-group-item-action" href="tel:+8801XXXXXXXXX">Call Us</a>
+      <a class="list-group-item list-group-item-action" href="faq.html">FAQ</a>
+      <a class="list-group-item list-group-item-action" href="contact.html">Contact Form</a>
+    </div>
+    <hr>
+    <a class="btn btn-success w-100 mt-2"
+       href="https://wa.me/8801XXXXXXXXX?text=Hi%20Apple%20Store%2C%20I%20need%20help%20with..."
+       target="_blank" rel="noopener">
+      Chat on WhatsApp
+    </a>
+  </div>
+</div>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+  <script src="./JS/homepage.js"></script>
+  <script src="./JS/cart.js"></script> 
+
+</body>
+</html>
