@@ -82,7 +82,7 @@ font-family: Poppins;
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
-line-height: 24px; /* 171.429% */
+line-height: 24px; 
 letter-spacing: 0.28px;
 
 }
@@ -169,8 +169,8 @@ letter-spacing: 0.28px;
 /* Square image area */
 .product-img-wrap{
   position: relative;
-  aspect-ratio: 1 / 1;          /* square */
-  overflow: hidden;             /* hide zoom overflow */
+  aspect-ratio: 1 / 1;          
+  overflow: hidden;             
   border-bottom: 1px solid #f0f0f0;
   background: #fff;
 }
@@ -179,8 +179,8 @@ letter-spacing: 0.28px;
 .product-img{
   width: 100%;
   height: 100%;
-  display: block;               /* remove baseline gap */
-  object-fit: cover;            /* FILL area (may crop) */
+  display: block;               
+  object-fit: cover;            
   object-position: center;
   transition: transform .3s ease;
 }
@@ -216,7 +216,7 @@ letter-spacing: 0.28px;
   transition: transform .15s ease, box-shadow .15s ease;
 }
 .color-radio input:checked + .color-dot {
-  box-shadow: 0 0 0 2px #0071e3, 0 0 0 4px #bcd9ff; /* Apple blue focus ring */
+  box-shadow: 0 0 0 2px #0071e3, 0 0 0 4px #bcd9ff; 
   transform: scale(1.05);
 }
 
@@ -268,7 +268,6 @@ letter-spacing: 0.28px;
 
 
 /* Customer Reviews */
-
 
 #reviewsCarousel .card {
   border-radius: 0;            
@@ -407,32 +406,33 @@ letter-spacing: 0.28px;
 
 
 /* Full-width 4-column layout with even spacing */
+/* ---- Footer (center content, full-width background) ---- */
 .site-footer {
   width: 100%;
   background-color: #fbfafa;
   color: #080707;
   font-size: 12px;
-  padding: 40px 120px 20px;
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr;  
-  gap: 40px;                                  
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 40px;
   align-items: start;
+
+  /* Center inner grid while keeping full-width bg */
+  padding: 40px max(24px, calc(50% - 600px)) 20px !important; /* 1200px content max */
+  box-sizing: border-box;
 }
 
-/* Headings & lists */
+/* Headings & lists (unchanged) */
 .site-footer h4, .site-footer h5 { margin: 0 0 10px; color: #080707; font-size: 18px; }
 .footer-menu__list { list-style: none; padding: 0; margin: 0; }
 .footer-menu__list li + li { margin-top: 8px; }
-.footer-menu__list a {
-  color: #080707; text-decoration: none; font-size: 12px; transition: color .2s ease;
-}
+.footer-menu__list a { color: #080707; text-decoration: none; font-size: 12px; transition: color .2s ease; }
 .footer-menu__list a:hover { color: #4f4e4f; }
 
-
+/* Newsletter (unchanged) */
 .site-footer__newsletter-input { padding-top: 0; }
 .site-footer__newsletter-input input[type="email"]{
-  width: 100%; max-width: 320px;
-  padding: 10px 12px;
+  width: 100%; max-width: 320px; padding: 10px 12px;
   border: 1px solid #dcdcdc; border-radius: 6px;
   background: #fff; color:#080707; outline: none;
 }
@@ -444,37 +444,39 @@ letter-spacing: 0.28px;
 }
 .site-footer__newsletter-input button:hover{ background:#4f4e4f; }
 
-/* Social icons row */
+/* Social (unchanged) */
 .Social{ display:flex; align-items:center; gap:12px; padding-left:0; }
 .Social a{ display:inline-flex; width:28px; height:28px; align-items:center; justify-content:center; border-radius:50%; transition: background-color .2s ease, transform .15s ease; }
 .Social a:hover{ background:rgba(0,0,0,.05); transform: translateY(-1px); }
 
-.footer-bottom {
-  grid-column: 1 / -1;           
-  border-top: 1px solid #e0e0e0; 
-  padding-top: 15px;
-  text-align: center;            
+/* Bottom bar (unchanged) */
+.footer-bottom { grid-column: 1 / -1; border-top: 1px solid #e0e0e0; padding-top: 15px; text-align: center; }
+.footer-bottom p { margin: 0; font-size: 12px; color: #555; }
+.footer-content h4 { font-size: 1.25rem; margin: 0 0 10px; color: #080707; }
+
+/* Tablet: keep centered content, narrower max width (~880px) */
+@media (max-width: 992px){
+  .site-footer{
+    grid-template-columns: 1.3fr 1fr;
+    gap: 24px;
+    padding: 32px max(20px, calc(50% - 440px)) 16px !important;
+  }
 }
 
-.footer-bottom p {
-  margin: 0;
-  font-size: 12px;
-  color: #555;
-}
-.footer-content h4 {
-  font-size: 1.25rem;
-  margin: 0 0 10px;
-  color: #080707;
-}
-
-
+/* Mobile */
 @media (max-width: 680px){
-  .site-footer{ padding: 28px 20px 16px; grid-template-columns: 1fr; gap: 24px; }
-  .footer-bottom{ flex-direction: column; align-items: flex-start; gap: 6px; }
-  .site-footer__newsletter-input button{ width:100%; }
+  .site-footer{
+    grid-template-columns: 1fr !important; /* single column */
+    gap: 24px;
+    padding: 28px 20px 16px !important; /* simple gutters on small screens */
+  }
+.footer-bottom{ flex-direction:column; align-items:flex-start; gap:6px; }
+.site-footer__newsletter-input button{ width: 100%; max-width: 200px; } /* full-width button on small screens */
 }
 
 
+
+/* blog */
 
 .media-slider {
   --card-w: 500px;
@@ -601,4 +603,121 @@ letter-spacing: 0.28px;
   transition: transform .25s ease;
 }
 .hover-card:hover .hover-overlay{ transform: translateY(0); }
+
+
+/* responsive  */
+/* ========= Mobile-first helpers ========= */
+
+/* Make all images naturally responsive */
+img { max-width: 100%; height: auto; }
+
+/* So text scales better on small screens */
+:root {
+  --h1: 40px;        /* desktop default you had */
+  --p: 16px;
+}
+.hero-text-overlay h1 { font-size: var(--h1); }
+.hero-text-overlay p  { font-size: var(--p); }
+
+/* Tighten common paddings on mobile */
+.container, .site-footer { padding-left: 16px; padding-right: 16px; }
+
+/* Cards: prevent overflow squish */
+.product-card, #reviewsCarousel .card, .blog-card, .media-card { min-width: 0; }
+
+/* ========= Breakpoint: ≤ 992px (tablets & small laptops) ========= */
+@media (max-width: 992px) {
+  /* Hero */
+  .hero { height: 80vh; }
+  .hero-text-overlay { padding: 24px; }
+
+  /* Product typography spacing */
+  .product-body { padding: 10px 14px 14px; }
+  .product-name { font-size: 0.98rem; }
+  .product-price { font-size: 0.95rem; }
+
+  /* Footer: 2 cols */
+  .site-footer {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 24px;
+    padding: 32px 24px 16px;
+  }
+}
+
+/* ========= Breakpoint: ≤ 768px (phones in landscape / large phones) ========= */
+@media (max-width: 768px) {
+  /* Hero converts to content-first */
+  .hero { height: auto; min-height: 70vh; }
+  .hero-wrapper { height: auto; }
+  .hero-image { height: 60vh; }
+  .hero-text-overlay {
+    position: static;
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    text-align: center;
+    padding: 28px 18px;
+  }
+  .hero-text-overlay h1 {
+    --h1: 30px;
+    line-height: 1.25;
+    font-weight: 500;
+  }
+  .hero-text-overlay p { --p: 15px; line-height: 1.5; }
+
+  /* CTA buttons stack */
+  .hero-buttons a {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    margin: 10px auto 0;
+    padding: 12px 18px;
+  }
+
+  /* Color swatches gap a bit tighter */
+  .color-swatches { gap: 6px; padding: 12px 12px 2px; }
+
+  /* Reviews: ensure readable height */
+  #reviewsCarousel .card-body { min-height: 200px; }
+
+  /* Blog strip: slower and narrower cards */
+  .blog-strip { --card-w: 22rem; --img-h: 120px; --speed: 50s; }
+  .blog-card__img { height: 160px; }
+  .blog-card__title { font-size: 1rem; }
+  .blog-card__text { font-size: 0.92rem; }
+
+  /* Media slider: slightly smaller cards */
+  .media-slider { --card-w: 360px; --card-h: 220px; }
+}
+
+/* ========= Breakpoint: ≤ 576px (most phones) ========= */
+@media (max-width: 576px) {
+  /* Logo a bit smaller */
+  .logo { max-width: 64px; padding: 6px; margin: 8px; }
+
+  /* Hero image shorter to get content above the fold */
+  .hero-image { height: 42vh; }
+  .hero-text-overlay { padding: 22px 14px; }
+  .hero-text-overlay h1 { --h1: 26px; }
+  .hero-text-overlay p  { --p: 14px; letter-spacing: 0.2px; }
+
+  /* Buttons even wider on tiny screens */
+  .hero-buttons a { max-width: 100%; padding: 12px 16px; }
+
+  /* Product cards: compact text/buttons */
+  .product-name { font-size: 0.95rem; }
+  .product-price { font-size: 0.93rem; margin-bottom: 8px; }
+  .btn-add { padding: 8px 12px; font-size: 0.95rem; }
+
+  /* Blog strip: single-line compact cards */
+  .blog-strip { --card-w: 18rem; --img-h: 110px; --speed: 55s; }
+  .blog-card__img { height: 140px; }
+  .blog-card__body { padding: 10px 12px 12px; }
+  .blog-card__btn { padding: 7px 10px; }
+
+  /* Media slider cards smaller */
+  .media-slider { --card-w: 300px; --card-h: 190px; }
+
+
+
+
 

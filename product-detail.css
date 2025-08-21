@@ -1,0 +1,231 @@
+/* ===== Base layout ===== */
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+.pd-wrap { max-width: 1200px; margin: 26px auto; padding: 0 12px; }
+
+/* ===== Gallery ===== */
+.thumbs { display: flex; flex-direction: column; gap: 12px; }
+.thumbs img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: none; outline: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .15s ease, opacity .15s ease, box-shadow .15s ease;
+}
+.thumbs img:hover { transform: translateY(-2px); opacity: .95; }
+.thumbs img.active { box-shadow: 0 0 0 2px rgba(0,0,0,.12) inset; }
+
+.main-img { position: relative; border-radius: 16px; overflow: hidden; }
+.pd-main {
+  width: 100%; height: auto; display: block;
+  border: none; border-radius: 16px; object-fit: cover;
+  transition: transform .25s ease;
+  cursor: zoom-in;
+}
+.pd-main.zoomed { transform: scale(1.8); cursor: zoom-out; }
+
+/* Carousel controls a bit larger + subtle shadow */
+.carousel-control-prev, .carousel-control-next {
+  width: 12%;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,.25));
+}
+
+/* ===== Right column (price/specs) ===== */
+.kv { color: #374151; }
+.specs ul, .specs2 ul { margin-left: 18px; }
+
+/* ===== Actions: qty left + Add to Cart right, Buy Now below ===== */
+.qty-wrap{
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: #f5f5f5;
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.qty-btn{
+  border: 0; background: #e9e9e9; border-radius: 999px;
+  padding: 6px 12px; font-weight: 700; line-height: 1;
+}
+.qty-val{ min-width: 24px; text-align: center; font-weight: 700; }
+
+/* CTA buttons: black ↔ white hover */
+.btn-cta{
+  border-radius: 999px;
+  padding: .65rem 1.1rem;
+  font-weight: 700;
+  border: 2px solid #000;
+  background: #000;
+  color: #fff;
+  transition: all .15s ease;
+}
+.btn-cta:hover,
+.btn-cta:focus{
+  background: #fff;
+  color: #000;
+}
+
+.btn-ghost{
+  border-radius: 999px;
+  padding: .7rem 1.1rem;
+  font-weight: 700;
+  border: 2px solid #000;
+  background: #fff;
+  color: #000;
+  transition: all .15s ease;
+}
+.btn-ghost:hover,
+.btn-ghost:focus{
+  background: #000;
+  color: #fff;
+}
+
+/* ===== Payment logos ===== */
+.pay-logos a{
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 46px; padding: 6px 10px;
+  border-radius: 10px; background: #f6f6f6;
+  text-decoration: none;
+  transition: background .15s ease, transform .15s ease;
+}
+.pay-logos a:hover{ background: #efefef; transform: translateY(-1px); }
+.pay-logos img{ height: 24px; width: auto; display: block; border: none; }
+
+/* ===== Accordion with + / – and white background ===== */
+.desc-acc .accordion-item{
+  border: 1px solid #eee; border-radius: 12px; overflow: hidden;
+}
+.desc-acc .accordion-button{
+  background: #fff; box-shadow: none; font-weight: 600; border: 0;
+}
+.desc-acc .accordion-button:focus{ box-shadow: none; }
+.desc-acc .accordion-button::after{
+  background-image: none !important;
+  content: "+";
+  font-size: 20px; font-weight: 700;
+  margin-left: auto;
+  transform: none !important;
+  color: #000;
+}
+.desc-acc .accordion-button:not(.collapsed)::after{
+  content: "–"; /* minus when open */
+}
+.desc-acc .accordion-body{ color: #374151; }
+
+/* ===== Related & Recently Viewed cards ===== */
+.mini-card{
+  border: 1px solid #eee;
+  border-radius: 16px;
+  background: #fff;
+  transition: transform .15s ease, box-shadow .15s ease;
+  cursor: pointer;
+}
+.mini-card img{
+  width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
+  border: none; border-radius: 12px;
+}
+.mini-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,.06);
+}
+.mini-card:active,
+.mini-card:focus-within{
+  transform: translateY(-3px);
+  box-shadow: 0 16px 28px rgba(0,0,0,.08);
+}
+/* Space below Recently Viewed before footer */
+.rv-gap { margin-bottom: 64px; }
+
+/* footer */
+
+/* Full-width 4-column layout with even spacing */
+.site-footer{
+  /* theming */
+  --bg: #fbfafa;
+  --fg: #080707;
+  --pad-x: 120px;   /* desktop horizontal padding */
+  --gap: 40px;
+
+  color: var(--fg);
+  background-color: var(--bg);
+
+  /* make background span full viewport width even inside a .container */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+
+  /* layout */
+  padding: 40px var(--pad-x) 20px;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;  
+  gap: var(--gap);                                  
+  align-items: start;
+}
+
+/* Headings & lists */
+.site-footer h4, .site-footer h5 {
+  margin: 0 0 10px; color: #080707; font-size: 18px;
+}
+.footer-menu__list { list-style: none; padding: 0; margin: 0; }
+.footer-menu__list li + li { margin-top: 8px; }
+.footer-menu__list a {
+  color: #080707; text-decoration: none; font-size: 12px; transition: color .2s ease;
+}
+.footer-menu__list a:hover { color: #4f4e4f; }
+
+/* Newsletter */
+.site-footer__newsletter-input { padding-top: 0; }
+.site-footer__newsletter-input input[type="email"]{
+  width: 100%; max-width: 320px;
+  padding: 10px 12px;
+  border: 1px solid #dcdcdc; border-radius: 6px;
+  background: #fff; color:#080707; outline: none;
+}
+.site-footer__newsletter-input input::placeholder{ color:#9b9b9b; }
+.site-footer__newsletter-input button{
+  margin-top: 10px; padding: 10px 14px;
+  border: 1px solid #080707; background:#080707; color:#fff;
+  border-radius: 6px; cursor:pointer;
+}
+.site-footer__newsletter-input button:hover{ background:#4f4e4f; }
+
+/* Social icons row */
+.Social{ display:flex; align-items:center; gap:12px; padding-left:0; }
+.Social a{
+  display:inline-flex; width:28px; height:28px; align-items:center; justify-content:center;
+  border-radius:50%; transition: background-color .2s ease, transform .15s ease;
+}
+.Social a:hover{ background:rgba(0,0,0,.05); transform: translateY(-1px); }
+
+/* Bottom line spans all columns */
+.footer-bottom{
+  grid-column: 1 / -1;
+  border-top: 1px solid #e0e0e0; 
+  padding-top: 15px;
+  text-align: center;
+}
+.footer-bottom p{
+  margin: 0; font-size: 12px; color: #555;
+}
+
+/* Optional: specific heading tweak you had */
+.footer-content h4 {
+  font-size: 1.25rem;
+  margin: 0 0 10px;
+  color: #080707;
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 1200px){
+  .site-footer{ --pad-x: 60px; }
+}
+
+@media (max-width: 576px){
+  .site-footer{
+    --pad-x: 16px;
+    grid-template-columns: 1fr;       /* single column on phones */
+    gap: 20px;
+  }
